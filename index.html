@@ -48,10 +48,10 @@
         .slide {
             display: none;
             width: 100%;
-            max-width: 600px; /* Alinhamento perfeito em telemóveis como o Oppo A5 Pro 5G */
+            max-width: 600px;
             background: rgba(10, 15, 30, 0.75);
             backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px); /* Suporte multi-browser para Safari */
+            -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(56, 189, 248, 0.25);
             border-radius: 1.5rem;
             padding: 1.75rem;
@@ -116,7 +116,7 @@
             border-radius: 0 1rem 1rem 0;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
             margin: 1rem 0;
-            overflow-x: auto; /* Garante que se a matriz for grande, desliza em vez de quebrar a tela */
+            overflow-x: auto;
             -webkit-overflow-scrolling: touch;
         }
 
@@ -163,7 +163,7 @@
             align-items: center;
             justify-content: center;
             animation: pulseSun 5s infinite alternate ease-in-out;
-            will-change: transform; /* Otimiza renderização em telemóveis */
+            will-change: transform;
         }
 
         @media (min-width: 768px) {
@@ -193,7 +193,7 @@
             user-select: none;
             -webkit-user-select: none;
             display: inline-block;
-            width: 100%; /* Largura total em telemóvel para facilitar o clique */
+            width: 100%;
         }
 
         @media (min-width: 480px) {
@@ -279,7 +279,6 @@
                         </div>
                     </div>
                     
-                    <!-- Elemento Decorativo que se esconde de forma inteligente em telas muito pequenas de smartphone -->
                     <div class="h-32 md:h-64 w-full p-2 hidden sm:flex items-center justify-center">
                         <div class="abstract-matrix"></div>
                     </div>
@@ -310,12 +309,12 @@
 
                     <div class="space-y-4 order-1 md:order-2">
                         <p class="text-base text-gray-300 leading-relaxed">
-                            Bom dia! Se calculaste a matriz inversa <strong>M⁻¹</strong> com sucesso, aplica-a ao vetor de coordenadas criptográficas <strong>C</strong> intercetado:
+                            Bom dia! Se calculaste a matriz inversa <strong>M⁻¹</strong> com sucesso, aplica-a ao vetor de coordenadas criptográficas <strong>C</strong> (atualizado para a data de hoje) intercetado:
                         </p>
                         
-                        <!-- Vetor de entrada intercetado -->
+                        <!-- Vetor de entrada intercetado e atualizado para dar exatamente 13.514 dias -->
                         <div class="formula-box flex justify-center text-white py-3 text-lg">
-                            $$C = \begin{bmatrix} 36564752 \\ 73115993 \end{bmatrix}$$
+                            $$C = \begin{bmatrix} 36564761 \\ 73116008 \end{bmatrix}$$
                         </div>
 
                         <div class="bg-amber-950/20 border border-amber-500/20 rounded-xl p-4 shadow-inner text-xs md:text-sm">
@@ -344,16 +343,16 @@
                 
                 <div class="flex flex-col items-center justify-center space-y-4">
                     
-                    <!-- Fórmula final com scrolling seguro para ecrãs de portrait estreitos -->
+                    <!-- Fórmula final resolvida para o dia de hoje -->
                     <div class="w-full overflow-x-auto py-2 bg-black/20 rounded-xl border border-gray-800/40 text-sm md:text-base px-2">
-                        $$X = M^{-1} \times C = \begin{bmatrix} 2 & -1 \\ -5 & 3 \end{bmatrix} \times \begin{bmatrix} 36564752 \\ 73115993 \end{bmatrix} = \begin{bmatrix} 13511 \\ 36524219 \end{bmatrix}$$
+                        $$X = M^{-1} \times C = \begin{bmatrix} 2 & -1 \\ -5 & 3 \end{bmatrix} \times \begin{bmatrix} 36564761 \\ 73116008 \end{bmatrix} = \begin{bmatrix} 13514 \\ 36524219 \end{bmatrix}$$
                     </div>
 
                     <div class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full">
                         <div class="text-left space-y-2 bg-gray-900/50 p-4 rounded-xl border border-gray-800 backdrop-blur-sm w-full sm:w-auto flex-grow text-xs md:text-sm">
                             <p class="text-gray-300 flex items-center">
                                 <span class="w-3 h-3 rounded-full bg-sky-400 mr-2 shadow-[0_0_8px_#38bdf8] flex-shrink-0"></span>
-                                Dias Vividos ($x_1$): <strong class="text-white ml-1">13.511</strong>
+                                Dias Vividos ($x_1$): <strong class="text-white ml-1">13.514</strong>
                             </p>
                             <p class="text-gray-300 flex items-center">
                                 <span class="w-3 h-3 rounded-full bg-amber-400 mr-2 shadow-[0_0_8px_#fbbf24] flex-shrink-0"></span>
@@ -362,26 +361,26 @@
                             <div class="h-px bg-gray-800 w-full my-2"></div>
                             <p class="text-gray-400">Relação Espaço-Tempo:</p>
                             <p class="text-base text-white font-mono bg-black/40 py-1.5 px-3 rounded text-center border border-gray-800/60 mt-1">
-                                13511 ÷ 365.24219
+                                13514 ÷ 365.24219
                             </p>
                         </div>
 
-                        <!-- Globo Solar Representativo da Translação -->
+                        <!-- Globo Solar com as voltas reais exatas arredondadas a 2 c.d. -->
                         <div class="relative flex-shrink-0 my-2 sm:my-0">
                             <div class="sun-orb flex-col">
-                                <span class="text-4xl md:text-5xl font-bold text-yellow-100 drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)]" style="text-shadow: 2px 2px 0 #b45309, -1.5px -1.5px 0 #b45309, 1.5px -1.5px 0 #b45309, -1.5px 1.5px 0 #b45309, 1.5px 1.5px 0 #b45309;">36.99</span>
+                                <span class="text-4xl md:text-5xl font-bold text-yellow-100 drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)]" style="text-shadow: 2px 2px 0 #b45309, -1.5px -1.5px 0 #b45309, 1.5px -1.5px 0 #b45309, -1.5px 1.5px 0 #b45309, 1.5px 1.5px 0 #b45309;">37.00</span>
                                 <span class="text-[9px] font-bold text-yellow-200 uppercase tracking-widest mt-1 drop-shadow-md">Voltas ao Sol</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Mensagem Especial de Aniversário -->
+                    <!-- Mensagem Especial de Aniversário Corrigida para HOJE -->
                     <div class="bg-gradient-to-r from-sky-950/40 via-purple-950/30 to-sky-950/40 border border-sky-500/20 rounded-xl p-4 w-full shadow-xl">
                         <p class="text-sm md:text-base text-blue-100 font-medium leading-relaxed">
-                            O relógio astronómico revela que estás a escassos <strong class="text-amber-300">3 dias</strong> de completares exatamente a tua 37ª translação ao redor do nosso Sol (desde 19 de Julho de 1989), isto é, ainda não fizeste 3 voltas ao sol :D. teoricamente "Antecipado" ! Afinal no Domingo dará para festejar o dia prático da mãe e o teu teórico. Votos de um dia e final de semana feliz e em grande ;)
+                            O relógio astronómico revela que <strong class="text-amber-300">hoje fechas exatamente a tua 37ª translação</strong> ao redor do nosso Sol (desde 16 de Julho de 1989)! Matematicamente, viveste 13 514 dias, o que corresponde a 37,0001 voltas ao nosso amigo SOL  — uma precisão cósmica impressionante. Hoje é o teu dia, mas no Domingo dará para prolongar a festa celebrando o teu dia com o da mãe. Votos de um dia e fim de semana em grande! ;)
                         </p>
-                        <p class="text-xl md:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-yellow-400 to-amber-200 mt-2.5 tracking-wide uppercase" style="font-family: 'Cinzel', serif;">
-                            Feliz Aniversário : teoricamente "Antecipado" ! Real no Domingo !
+                        <p class="text-xl md:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-yellow-400 to-amber-200 mt-3 tracking-wide uppercase" style="font-family: 'Cinzel', serif;">
+                            Feliz 37º Aniversário!
                         </p>
                     </div>
                 </div>
