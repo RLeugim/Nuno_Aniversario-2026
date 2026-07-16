@@ -1,1 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemini - Partilha de Conversa</title>
+    <link rel="icon" href="https://www.gstatic.com/lamda/images/gemini_sparkle_4g_512_lt_f94943af3be039176192d.png" type="image/png">
+    <style>
+        :root {
+            --bg-primary: #131314;
+            --bg-secondary: #1e1f20;
+            --text-primary: #e3e3e3;
+            --text-secondary: #c4c7c5;
+            --border-color: #444746;
+            --accent-color: #a8c7fa;
+            --accent-gradient: linear-gradient(90deg, #4285f4, #9b72cb, #d96570, #f1a94e);
+        }
 
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 24px;
+            background-color: var(--bg-primary);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-text {
+            font-size: 22px;
+            font-weight: 500;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 40px 20px;
+            box-sizing: border-box;
+            flex-grow: 1;
+        }
+
+        .chat-thread {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .chat-bubble {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .user-prompt {
+            align-self: flex-end;
+            background-color: var(--bg-secondary);
+            padding: 16px 24px;
+            border-radius: 24px 24px 4px 24px;
+            max-width: 85%;
+            border: 1px solid var(--border-color);
+        }
+
+        .model-response {
+            align-self: flex-start;
+            width: 100%;
+            display: flex;
+            gap: 16px;
+            margin-top: 8px;
+        }
+
+        .avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .response-content {
+            flex-grow: 1;
+            line-height: 1.6;
+            color: var(--text-primary);
+            white-space: pre-line;
+        }
+
+        .divider {
+            height: 1px;
+            background-color: var(--border-color);
+            margin: 24px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 24px;
+            color: var(--text-secondary);
+            font-size: 12px;
+            border-top: 1px solid var(--border-color);
+            background-color: var(--bg-secondary);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L14.8 9.2L22 12L14.8 14.8L12 22L9.2 14.8L2 12L9.2 9.2L12 2Z" fill="#a8c7fa"/>
+            </svg>
+            <span class="logo-text">Gemini</span>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="chat-thread">
+            
+            <!-- Conversa 1 -->
+            <div class="chat-bubble">
+                <div class="user-prompt">
+                    Que tipo de planta é esta e como cuido dela?
+                </div>
+                <div class="model-response">
+                    <img class="avatar" src="https://www.gstatic.com/lamda/images/gemini_sparkle_4g_512_lt_f94943af3be039176192d.png" alt="Gemini">
+                    <div class="response-content">
+A planta na imagem é um bonsai. Bonsai são árvores miniaturizadas que são cultivadas em vasos. Eles podem ser feitos de uma variedade de árvores, mas a mais comum é a figueira. As figueiras são árvores tropicais que gostam de sol e água.
+
+Para cuidar de um bonsai, você precisará fornecer-lhe as seguintes condições:
+<strong>Luz:</strong> As figueiras precisam de pelo menos 4 horas de luz solar direta por dia.
+                    </div>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Conversa 2 -->
+            <div class="chat-bubble">
+                <div class="user-prompt">
+                    Quero testar os meus conhecimentos sobre a lua. Cria um questionário para eu responder.
+                </div>
+                <div class="model-response">
+                    <img class="avatar" src="https://www.gstatic.com/lamda/images/gemini_sparkle_4g_512_lt_f94943af3be039176192d.png" alt="Gemini">
+                    <div class="response-content">
+Aqui está um questionário de 10 perguntas sobre a lua para você testar seus conhecimentos:
+
+<strong>1. Quanto tempo a Lua leva para dar uma volta completa em torno da Terra?</strong>
+(A) 27 dias, 7 horas, 43 minutos e 12 segundos
+(B) 29,5 dias
+(C) 1 dia e 1 noite
+(D) 24 horas
+
+<strong>2. Em que ano o homem pisou na Lua pela primeira vez?</strong>
+(A) 1969
+(B) 1971
+(C) 1972
+(D) 1973
+                    </div>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Conversa 3 -->
+            <div class="chat-bubble">
+                <div class="user-prompt">
+                    Escreve uma mensagem para enviar à minha amiga a pedir desculpa por não poder ir ao casamento dela.
+                </div>
+                <div class="model-response">
+                    <img class="avatar" src="https://www.gstatic.com/lamda/images/gemini_sparkle_4g_512_lt_f94943af3be039176192d.png" alt="Gemini">
+                    <div class="response-content">
+Olá, [nome da amiga],
+
+Espero que esta mensagem te encontre bem.
+
+Estou escrevendo para te pedir desculpas por não poder estar presente no teu casamento. Sei que é um dia muito especial para ti e para o [nome do noivo] e eu gostaria muito de estar lá para celebrar com vocês.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>Conteúdo estático gerado a partir de dados de partilha pública do Google Gemini.</p>
+    </footer>
+
+</body>
+</html>
